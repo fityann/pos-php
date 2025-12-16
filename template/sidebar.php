@@ -13,7 +13,15 @@
                         <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Fityan Algifari Yogaswara</a>
+                        <a href="#" class="d-block">
+                            <?php echo $_SESSION['name'];
+                            echo "<br>"; 
+                            echo "<small>";
+                            echo $_SESSION['email'];
+                            echo "</small>";
+                            ?>
+
+                        </a>
                     </div>
                 </div>
 
@@ -32,8 +40,7 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                        <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
                             <a href="dashboard.php" class="nav-link">
@@ -89,6 +96,15 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <!-- logout -->
+                         <li class="nav-item">
+                            <a href="../logout.php" class="nav-link">
+                                <i class="nav-icon fas  fa-shopping-cart"></i>
+                                <p>
+                                    Logout
+                                </p>
+                            </a>
                         </li>
                     </ul>
                 </nav>

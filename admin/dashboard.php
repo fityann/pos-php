@@ -4,7 +4,13 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
-
+<?php 
+session_start();
+if (!isset($_SESSION['status_login']) && $_SESSION['status_login'] !== true) {
+    $_SESSION['message'] = "Please login to access the admin dashboard.";
+    header('Location: ../index.php');
+}
+?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 
 <body class="hold-transition sidebar-mini">
+
     <div class="wrapper">
 
         <!-- Navbar -->
